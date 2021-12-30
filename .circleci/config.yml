@@ -21,6 +21,10 @@ jobs:
           command: |
             npm run lint
       - run:
+          name: Tests
+          command: |
+            npm run test-prod
+      - run:
           name: Build App
           command: |
             npm run build
