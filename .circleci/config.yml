@@ -7,15 +7,17 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - node/install
+      - node/install:
+          node-version: '14.17'
+      - run: node --version
       - checkout
       - aws-cli/setup
       - run:
-          name: Install
+          name: Install Packages
           command: |
             npm install
       - run:
-          name: Build
+          name: Build App
           command: |
             npm run build
       - run:
